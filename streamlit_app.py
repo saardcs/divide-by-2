@@ -44,7 +44,7 @@ else:
 
         col1, col2, col3 = st.columns([2, 1, 1])
         with col1:
-            st.markdown(f"### {current} / 2")
+            st.markdown(f"### {current} / 2 =")
         with col2:
             user_q = st.number_input("Result", step=1, key=f"q_{len(st.session_state.steps)}")
         with col3:

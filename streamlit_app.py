@@ -37,7 +37,7 @@ else:
         # st.markdown("### Steps So Far")
         col1, col2, col3 = st.columns([2, 1, 1])
         col1.markdown("**Division**")
-        col2.markdown("**Quotient**")
+        col2.markdown("**Result**")
         col3.markdown("**Remainder**")
         for n, q, r in st.session_state.steps:
             col1.markdown(f"{n} / 2")
@@ -52,7 +52,7 @@ else:
         with col1:
             st.markdown(f"### {current} / 2")
         with col2:
-            user_q = st.number_input("Quotient", step=1, key=f"q_{len(st.session_state.steps)}")
+            user_q = st.number_input("Result", step=1, key=f"q_{len(st.session_state.steps)}")
         with col3:
             user_r = st.number_input("Remainder", min_value=0, max_value=1, step=1, key=f"r_{len(st.session_state.steps)}")
 

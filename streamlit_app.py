@@ -1,7 +1,20 @@
 import streamlit as st
+import qrcode
+import io
 
 st.set_page_config(page_title="Binary Division Steps", layout="centered")
 st.title("🔢 Convert Decimal to Binary (Divide by 2 Method)")
+
+# Sidebar with QR code
+st.sidebar.header("Scan This QR Code to Access the App")
+
+qr_link = "https://divide-by-2.streamlit.app"  # Replace with your actual URL
+qr = qrcode.make(qr_link)
+buf = io.BytesIO()
+qr.save(buf)
+buf.seek(0)
+
+st.sidebar.image(buf, width=300, caption=qr_link)
 
 # Initialize session state
 if "started" not in st.session_state:
@@ -79,3 +92,4 @@ else:
                 st.button("🔁 Try Another Number", on_click=reset)
             else:
                 st.error("❌ That’s not the correct binary. Check your remainders again!")
+

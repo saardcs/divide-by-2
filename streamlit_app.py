@@ -49,7 +49,7 @@ else:
     if st.session_state.steps:
         st.markdown("#### Steps so far:")
         for i, (n, q, r) in enumerate(st.session_state.steps, 1):
-            st.markdown(f"###{i}. **{n} / 2 = {q} R {r}**")
+            st.markdown(f"### {i}. **{n} / 2 = {q} R {r}**")
 
     if not st.session_state.completed:
         current = st.session_state.current
@@ -92,5 +92,6 @@ else:
                 st.button("🔁 Try Another Number", on_click=reset)
             else:
                 st.error("❌ That’s not the correct binary. Check your remainders again!")
+
 
 
